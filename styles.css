@@ -1,0 +1,162 @@
+body {
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    margin: 0;
+}
+#about-body {
+    background-color: beige !important;
+    margin: 0;
+}
+#about-body a {
+    color: black;
+}
+section img {
+    width: 100%;
+    height: auto;
+}
+section a {
+    left: 10px;
+    position: relative;
+    padding: 15px;
+    font-size: 20px;
+    text-decoration: none;
+}
+#blog-body {
+    background-color: lightblue;
+    margin: 0;
+}
+#portfolio-body {
+    background-color: indianred;
+    margin: 0;
+}
+#portfolio-body p {
+    text-align: center;
+}
+.meeovi, .pixanomy, .news, .restaurant, .travel, .notes, .messenger, .dating, .novels, .sound, .shopbold, .shopcute {
+    text-align: center !important;
+    width: 100%;
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+}
+.meeovi a, .pixanomy a, .news a, .restaurant a, .travel a, .notes a, .messenger a, .dating a, .novels a, .sound a, .shopcute a, .shopbold a {
+    text-decoration: none;
+    font-size: 30px;
+    color: white;
+}
+#portfolio-body img {
+    height: auto;
+    left: 1% !important;
+}
+.workscale {
+    top: 10%;
+    position: absolute
+}
+@media only screen and (max-width: 850px){
+    #portfolio-body img, .skillset-img {
+        left: 0 !important;
+        width: 100% !important;
+        height: auto;
+        position: relative;
+    }
+}
+.about-me {
+    top: 75%;
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+}
+.quick-about {
+    top: 50%;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    font-size: 25px;
+}
+.quick-about a {
+    color: indianred;
+    text-decoration: none;
+}
+.about-me h1 {
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
+.about-me p {
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
+}
+.author-text {
+    width: 100%;
+    color: black;
+    font-display: monospace;
+    text-align: center;
+    bottom: 30px;
+}
+.author-text p {
+    padding: 5px;
+    padding-bottom: 5px;
+    font-family: 'Courier New', Courier, monospace
+}
+.author-h1 {
+    width: 100%;
+    text-align: center;
+}
+#portfolio-body img {
+    width: 50%;
+    height: auto;
+    left: 5px;
+    position: relative;
+}
+@media only screen and (max-width: 800px){
+    #author-body img {
+        width: 250px;
+        height: auto;
+    }
+    footer a {
+        font-size: 20px;
+    }
+    .welcome-h1 {
+        top: 15%;
+        text-align: center;
+        font-size: 30px;
+    }
+}
+.iconlinks {
+    float: right;
+    z-index: 999;
+    font-size: 20px;
+    bottom: 15px;
+    right: 15px;
+    position: fixed;
+}
+.iconlinks a {
+    color: white;
+    padding: 10px;
+    float: right;
+}
+#about-body .iconlinks {
+    background-color: lightsteelblue;
+    width: 8%;
+    margin: 0;
+    right: 0;
+    position: fixed;
+    bottom: 0;
+}
+#portfolio-body .iconlinks {
+    background-color: palevioletred;
+    width: 8%;
+    margin: 0;
+    right: 0;
+    position: fixed;
+    bottom: 0;
+}
+.welcometext {
+    top: 25%;
+    position: absolute;
+    width: 100%;
+}
+.welcometext h1 {
+    text-align: center;
+}

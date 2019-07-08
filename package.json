@@ -1,0 +1,21 @@
+{
+  "name": "sebastianhilton.com",
+  "version": "1.0.0",
+  "description": "Author, Web Designer, Entrepeneur",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "officialmeeovi"
+  },
+  "keywords": [
+    "author",
+    "entrepeneur",
+    "web",
+    "developer"
+  ],
+  "author": "Sebastian hilton",
+  "license": "ISC"
+}

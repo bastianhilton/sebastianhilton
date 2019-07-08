@@ -1,0 +1,38 @@
+.logoleft {
+    left: 0;
+    position: fixed;
+    top: 5px;
+}
+.logoleft a {
+    color: white;
+    text-decoration: none;
+}
+.rightlinks {
+    float: right;
+    position: fixed;
+    right: 15px;
+    top: 5px;
+}
+.rightlinks a {
+    color: white;
+    padding: 5px;
+    text-decoration: none;
+}
+.rightlinks a:hover {
+    text-decoration: underline;
+    color: indianred;
+}
+#portfolio-body nav {
+    z-index: 999;
+    background-color: palevioletred !important;
+    min-height: 45px;
+    position: fixed;
+    width: 100%;
+}
+#about-body nav {
+    z-index: 999;
+    background-color: lightsteelblue !important;
+    min-height: 45px;
+    position: fixed;
+    width: 100%;
+}
