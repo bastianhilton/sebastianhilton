@@ -13,6 +13,12 @@
     right: 15px;
     top: 5px;
 }
+@media screen and (max-width: 700px){
+    .rightlinks {
+        top: 15px !important;
+        position: absolute;
+    }
+}
 .rightlinks a {
     color: white;
     padding: 5px;

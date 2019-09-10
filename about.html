@@ -10,22 +10,45 @@
     <meta name="author" content="Sebastian Hilton">
     <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon">
     <script src="https://kit.fontawesome.com/5f36ca3a3b.js"></script>
-    <link rel="stylesheet" href="navigation.css">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="navigation.css ">
+    <style>
+    @media screen and (max-width: 700px){
+      .rightlinks {
+          top: 5px !important;
+          position: absolute;
+      }
+      img {
+          top: 10%;
+      }
+      .about-me p, .about-me h1, a {
+          color: white;
+      }
+      nav, .logoleft, .rightlinks {
+          position: relative;
+      }
+      .iconlinks {
+          position: relative;
+      }
+  }
+  .about-me p, .about-me h1, a {
+          color: white;
+      }
+    </style>
 </head>
-<body id="about-body">
+<body id="main-body">
     <nav>
         <ul class="logoleft">
             <a href="/">< Sebastian Hilton /></a>
         </ul>
         <ul class="rightlinks">
-            <a href="/works">Works</a>
-            <a href="/about">About</a>
-            <a href="/blog">Blog</a>
+            <a href="/works.html">Works</a>
+            <a href="/about.html">About</a>
         </ul>
     </nav>
 <section>
-    <img src="/images/Web Developer (1).png" alt="About Me">
+    <img src="images/Web Developer (1).png"
+    alt="About Me">
     <a href="/resume">Resume</a>
     <a href="http://www.github.com/bastianhilton">Github</a>
 </section>
@@ -44,7 +67,5 @@
     <a href="http://www.github.com/bastianhilton"><i class="fab fa-github"></i></a>
     <a href="bastianh86@outlook.com"><i class="fas fa-at"></i></a>
 </div>
-
-
 </body>
 </html>
