@@ -10,53 +10,20 @@
             
         </div>
         <div class="row mt-4">
-            <div class="item features-image сol-12 col-md-6 col-lg-4">
+            <div class="item features-image сol-12 col-md-6 col-lg-4" v-for="post in post" :key="post._path">
                 <div class="item-wrapper">
                     <div class="item-img">
-                        <img src="../assets/assets/images/product2.jpg" alt="Mobirise Website Builder" title="">
+                        <img src="../assets/assets/images/mainbackground-1920x1440.jpg" :alt="post.title" :title="post.title">
                     </div>
                     <div class="item-content">
-                        <h5 class="item-title mbr-fonts-style display-5"><strong>Design</strong></h5>
-                        <h6 class="item-subtitle mbr-fonts-style mt-1 display-7">Website Design</h6>
-                        <p class="mbr-text mbr-fonts-style mt-3 display-7">Mobirise is an easy website builder. Just
-                            drop site elements to your page, add content and style it to look the way you like.</p>
+                        <h5 class="item-title mbr-fonts-style display-5"><strong>{{ post.title }}</strong></h5>
+                        <h6 class="item-subtitle mbr-fonts-style mt-1 display-7">{{ post.tags }}</h6>
+                        <p class="mbr-text mbr-fonts-style mt-3 display-7">{{ post.description }}</p>
                     </div>
-                    <div class="mbr-section-btn item-footer mt-2"><a href="" class="btn item-btn btn-black display-7" target="_blank">Start Now
+                    <div class="mbr-section-btn item-footer mt-2"><a :href="post._path" class="btn item-btn btn-black display-7">Read More
                             &gt;</a></div>
                 </div>
             </div>
-            <div class="item features-image сol-12 col-md-6 col-lg-4">
-                <div class="item-wrapper">
-                    <div class="item-img">
-                        <img src="../assets/assets/images/product3.jpg" alt="Mobirise Website Builder" title="">
-                    </div>
-                    <div class="item-content">
-                        <h5 class="item-title mbr-fonts-style display-5"><strong>Programming</strong></h5>
-                        <h6 class="item-subtitle mbr-fonts-style mt-1 display-7">
-                            HTML/CSS Coding</h6>
-                        <p class="mbr-text mbr-fonts-style mt-3 display-7">You don't have to code to create your own
-                            site. Select one of available themes in the Mobirise Site Maker.</p>
-                    </div>
-                    <div class="mbr-section-btn item-footer mt-2"><a href="" class="btn item-btn btn-black display-7" target="_blank">Start Now
-                            &gt;</a></div>
-                </div>
-            </div>
-            <div class="item features-image сol-12 col-md-6 col-lg-4">
-                <div class="item-wrapper">
-                    <div class="item-img">
-                        <img src="../assets/assets/images/product1.jpg" alt="Mobirise Website Builder" title="">
-                    </div>
-                    <div class="item-content">
-                        <h5 class="item-title mbr-fonts-style display-5"><strong>Branding</strong></h5>
-                        <h6 class="item-subtitle mbr-fonts-style mt-1 display-7">Creating Your Brand</h6>
-                        <p class="mbr-text mbr-fonts-style mt-3 display-7">Select the theme that suits you. Each theme
-                            in the Mobirise Website Software contains a set of unique blocks.<br></p>
-                    </div>
-                    <div class="mbr-section-btn item-footer mt-2"><a href="" class="btn item-btn btn-black display-7" target="_blank">Start Now
-                            &gt;</a></div>
-                </div>
-            </div>
-
         </div>
     </div>
 </section>
@@ -73,4 +40,5 @@
       useHead({
           title: 'My Blog',
       })
+      const { data: post } = await useAsyncData('blog', () => queryContent('/posts/').sort({ date: -1 }).find())
   </script>

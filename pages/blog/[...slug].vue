@@ -14,80 +14,30 @@
             <div class="card-wrapper">
                 <div class="card-box align-center">
                     <h4 class="card-title mbr-fonts-style align-center mb-4 display-1">
-                        <strong>Themes and Extensions</strong>
+                        <strong>{{ data.post.title }}</strong>
                     </h4>
                     <p class="mbr-text mbr-fonts-style mb-4 display-7">
-                        2500+ beautiful website blocks, templates and themes help you start easily.</p>
-                    
+                        {{ data.post.tags }}</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 </section>
-
-<section data-bs-version="5.1" class="features14 cid-tt95QrU2rg" id="features15-c">
-
-
-
-
-
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="card col-12 col-md-6 col-lg-4">
-            <div class="card-wrapper">
-                <span class="mbr-iconfont mobi-mbri-protect mobi-mbri m-auto"></span>
-                <div class="card-box">
-                    <h4 class="card-title mbr-fonts-style mb-2 display-7"><strong>Released Date</strong></h4>
-                    <h5 class="card-text mbr-fonts-style display-4">Mobirise is a free website builder.</h5>
-                </div>
-            </div>
-        </div>
-        <div class="card col-12 col-md-6 col-lg-4">
-            <div class="card-wrapper">
-                <span class="mbr-iconfont m-auto mobi-mbri-website-theme-2 mobi-mbri"></span>
-                <div class="card-box">
-                    <h4 class="card-title mbr-fonts-style mb-2 display-7"><strong>Last Updated</strong></h4>
-                    <h5 class="card-text mbr-fonts-style display-4">Create landing pages with ease.</h5>
-                </div>
-            </div>
-        </div>
-        <div class="card col-12 col-md-6 col-lg-4">
-            <div class="card-wrapper">
-                <span class="mbr-iconfont m-auto mobi-mbri-features mobi-mbri"></span>
-                <div class="card-box">
-                    <h4 class="card-title mbr-fonts-style mb-2 display-7">
-                        <strong>Topic</strong></h4>
-                    <h5 class="card-text mbr-fonts-style display-4">Build a website with Mobirise.</h5>
-                </div>
-
-            </div>
-        </div>
-        
-    </div>
-</div>
-</section>
-
 <section data-bs-version="5.1" class="content7 cid-tt95ql8vb7" id="content7-9">
 
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-12 col-md-12">
             <blockquote>
-            <h5 class="mbr-section-title mbr-fonts-style mb-2 display-7"><strong>How mobirise works?</strong></h5>
-            <p class="mbr-text mbr-fonts-style display-4">Use Mobirise website building software to create multiple sites for commercial and non-profit projects. Themes in the Mobirise website builder offer multiple blocks: intros, sliders, galleries, forms, articles, and so on. Start a project and click on the red plus buttons to see the blocks available for your theme.</p></blockquote>
+            <h5 class="mbr-section-title mbr-fonts-style mb-2 display-7"><strong>{{ data.post.date }}</strong></h5>
+            <p class="mbr-text mbr-fonts-style display-4">{{ data.post.description }}</p></blockquote>
         </div>
     </div>
 </div>
 </section>
 
 <section data-bs-version="5.1" class="social1 cid-tt95ELfDUn" id="share1-b">
-
-
-
-
-
-
 <div class="container">
     <div class="media-container-row">
         <div class="col-12">
@@ -132,6 +82,35 @@
     },
   }
 
+</script>
+
+<script setup>
+const { path } = useRoute();
+const { data } = await useAsyncData(`content-${path}`, async () => {
+
+  // fetch document where the document path matches with the cuurent route
+  let post = queryContent().where({ _path: path }).findOne();
+
+  // get the surround information,
+  // which is an array of documeents that come before and after the current document
+  let surround = queryContent().only(["_path", "title", "description"]).sort({ date: 1 }).findSurround(path);
+  return {
+    post: await post,
+    surround: await surround,
+  };
+});
+
+useHead({
+  title: data.value.post.title,
+  meta: [
+    { name: "description", content: data.value.post.description },
+    {
+      hid: "og:image",
+      property: "og:image",
+      content: `https://site.com/${data.value.post.img}`,
+    },
+  ],
+});
 </script>
 
 <style>
