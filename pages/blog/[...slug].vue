@@ -73,12 +73,9 @@
 </template>
 
 <script>
-  import RelatedPosts from '../../components/RelatedPosts.vue'
 
   export default {
-    components: {
-      RelatedPosts
-    },
+
   }
 
 </script>
