@@ -1,7 +1,7 @@
 ---
 title: Elite Kids
 img: 'img/graphqlserver.jpeg'
-tags: Nuxt, Javascript, Alternate Framework
+tags: Nuxt, Javascript, Graphql
 link: https://kids.elitenovels.com
 ---
 

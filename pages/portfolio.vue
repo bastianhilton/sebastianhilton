@@ -1,34 +1,42 @@
 <template>
     <div>
-        <section data-bs-version="5.1" class="features3 cid-tt93lNy0Nk" id="features3-5">
-    
-    <div class="mbr-overlay"></div>
-    <div class="container">
-        <div class="mbr-section-head">
-            <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                <strong>My Portfolio</strong></h4>
-            
-        </div>
-        <div class="row mt-4">
-            <div class="item features-image сol-12 col-md-6 col-lg-4" v-for="work in work" :key="work">
-                <div class="item-wrapper">
-                    <div class="item-img">
-                        <img src="../assets/images/cosmos-4888643_1920.jpg" :alt="work.title">
+        <section data-bs-version="5.1" class="features1 cid-txzrmD8HNY" id="features1-7">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="title-wrapper">
+                            <h2 class="mbr-section-title mbr-fonts-style display-2">My Porfolio.
+                            </h2>
+                        </div>
                     </div>
-                    <div class="item-content">
-                        <h5 class="item-title mbr-fonts-style display-7"><strong>{{ work.title }}</strong></h5>
-                        <h6 class="item-title mbr-fonts-style display-8"><strong>{{ work.tags }}</strong></h6>
-                        <p class="mbr-text mbr-fonts-style mt-3 display-7">{{ work.description }}</p>
+                    <div class="col-12 col-lg-3 col-md-4 col-sm-6 item features-image" v-for="work in work" :key="work">
+                        <a class="item-link" :href="work.link">
+                            <div class="item-wrapper">
+                                <img :src="work.img" alt="">
+                                <div class="item-sticker">
+                                    <p class="mbr-text mbr-fonts-style display-4">
+                                        {{ work.tags }}
+                                    </p>
+                                </div>
+                                <div class="item-text">
+                                    <span class="mbr-iconfont socicon socicon-facebook"></span>
+                                    <h3 class="mbr-card-title mbr-fonts-style display-5">
+                                        {{ work.title }}
+                                    </h3>
+                                    <p class="mbr-card-text mbr-fonts-style display-4">
+                                        <a :href="work.link" style="color: white !important;">{{ work.link }}</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </a>
                     </div>
-                    <div class="mbr-section-btn item-footer mt-2"><a :href="work.link" class="btn btn-primary item-btn display-7" target="_blank">Learn More
-                            &gt;</a></div>
+
+                    <div class="blur-circle"></div>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
-</section>
-    </div>
-  </template>
+</template>
   
   <script>
   export default {

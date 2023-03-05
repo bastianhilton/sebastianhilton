@@ -1,0 +1,58 @@
+/********************** Main CSS *************/
+html {
+    overflow-y: scroll;
+}
+body {
+    margin: 0;
+}
+
+#topnav {
+    width: 100% !important;
+}
+
+.logobrand {
+    text-decoration: none;
+}
+
+.skilltitle {
+    text-align: center;
+    color: white;
+}
+
+.skillcard {
+    padding-bottom: 10px;
+}
+
+.datebar {
+    background-color: transparent !important;
+}
+
+.item-content .mbr-text, .item-content .item-title, .item-content .item-subtitle {
+    color: black !important;
+}
+
+/******************* Main Section CSS *********/
+
+#mainSection {
+    top: 0px !important;
+    position: relative !important;
+    left: 0px;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.dialog-bottom-transition-enter-active,
+.dialog-bottom-transition-leave-active {
+    transition: transform .2s ease-in-out;
+}
+
+/******************** Sidebar CSS *************/
+
+#sidebarNav {
+    height: 100vh !important;
+    left: 0px;
+    float: left;
+    position: relative;
+    padding-left: 0px;
+    padding-right: 0px;
+}

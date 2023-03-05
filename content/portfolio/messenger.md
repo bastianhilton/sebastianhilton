@@ -1,7 +1,7 @@
 ---
 title: Meeovi Messenger
 img: 'img/graphqlserver.jpeg'
-tags: Nuxt, Javascript, Alternate Framework
+tags: Nuxt, Javascript, Graphql
 link: https://messenger.meeovi.com
 ---
 

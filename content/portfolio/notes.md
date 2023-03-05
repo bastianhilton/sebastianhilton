@@ -1,7 +1,7 @@
 ---
 title: Meeovi Notes
 img: 'img/graphqlserver.jpeg'
-tags: Nuxt, Javascript, Alternate Framework
+tags: Nuxt, Javascript, Graphql
 link: https://notes.meeovi.com
 ---
 

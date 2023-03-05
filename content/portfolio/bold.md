@@ -1,7 +1,7 @@
 ---
 title: ShopnBold
 img: 'img/graphqlserver.jpeg'
-tags: Nuxt, Javascript, Alternate Framework
+tags: Nuxt, Javascript, Graphql
 link: https://www.shopnbold.com
 ---
 

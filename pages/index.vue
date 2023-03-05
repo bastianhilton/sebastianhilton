@@ -1,25 +1,34 @@
 <template>
   <div>
-    <section data-bs-version="5.1" class="header6 cid-tt8vDrRHvn mbr-fullscreen" id="header6-0">
-      <div class="mbr-overlay" style="opacity: 0.2; background-color: rgb(68, 121, 217);"></div>
-      <div class="align-center container">
-        <div class="row justify-content-center">
-          <div class="col-12 col-lg-10">
-            <h1 class="mbr-section-title mbr-fonts-style mbr-white mb-3 display-1"><strong>&lt; Sebastian Hilton
-                /&gt;</strong></h1>
-            <h2 class="mbr-section-subtitle mbr-fonts-style mbr-white mb-3 display-2">A UI Designer that also</h2>
-            <p class="mbr-text mbr-white mbr-fonts-style display-7">Built the <a href="https://www.alternatecms.com"
-                class="text-warning" target="_blank">Alternate Framework</a><br>Created <a href="https://www.meeovi.com"
-                class="text-warning" target="_blank">Meeovi</a> and <a href="https://www.pixanomy.com"
-                class="text-warning" target="_blank">Pixanomy</a><br>Creates <a
-                href="https://www.behance.net/bastianhilton" class="text-warning" target="_blank">Mockups and
-                Designs</a></p>
-            <div class="mbr-section-btn mt-3"><a class="btn btn-warning-outline display-4"
-                href="https://www.elitenovels.com" target="_blank">I'm also an Author</a></div>
+      <section data-bs-version="5.1" class="header2 cid-txzpAiwasN" id="header2-1">
+          <div class="container-fluid">
+              <div class="row">
+                  <div class="col-12">
+                      <div class="text-wrapper">
+                          <p class="mbr-date mbr-fonts-style display-5">
+                              <strong>UX/UI Designer</strong></p>
+                          <h1 class="mbr-section-title mbr-fonts-style display-1">&lt;Sebastian Hilton /&gt;</h1>
+                          <p class="mbr-loc mbr-fonts-style display-5">
+                              <strong>CEO</strong></p>
+                          <p class="mbr-text mbr-fonts-style display-5">
+                            A UI Designer that also
+                          </p>
+                          <p class="mbr-desc mbr-fonts-style display-7">
+                            Created <a href="https://www.meeovi.com">Meeovi</a><br>
+                           <a href="/portfolio">Design</a> websites <br>
+                            Creates <a href="https://www.behance.net/bastianhilton">concepts and mockups</a> too
+                          </p>
+                          <div class="mbr-section-btn">
+                              <a class="btn btn-primary-outline display-4" href="https://www.elitenovels.com">
+                                  I'm an Author
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="blur-circle"></div>
+              </div>
           </div>
-        </div>
-      </div>
-    </section>
+      </section>
   </div>
 </template>
 

@@ -1,7 +1,7 @@
 ---
-title: 'Alternate Framework'
-img: 'graphqlserver.jpeg'
-tags: Nuxt, Javascript, Alternate Framework
+title: 'Graphql'
+img: 'img/graphqlserver.jpeg'
+tags: Nuxt, Javascript, Graphql
 link: https://www.alternatecms.com
 ---
 

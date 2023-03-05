@@ -1,41 +1,40 @@
 <template>
-  <div>
-    <section data-bs-version="5.1" class="info3 cid-tt95v8YZpq" id="info3-a">
-
-    
-
-    
-<div class="mbr-overlay" style="opacity: 0.6; background-color: rgb(68, 121, 217);">
-</div>
-
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="card col-12 col-lg-10">
-            <div class="card-wrapper">
-                <div class="card-box align-center">
-                    <h4 class="card-title mbr-fonts-style align-center mb-4 display-1">
-                        <strong>{{ data.post.title }}</strong>
-                    </h4>
-                    <p class="mbr-text mbr-fonts-style mb-4 display-7">
-                        {{ data.post.tags }}</p>
+    <div>
+        <section data-bs-version="5.1" class="content5 cid-txzIsjSvT1 mbr-fullscreen" id="content5-d">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 blur-wrapper">
+                        <div class="blur-circle"></div>
+                        <div class="blur-text">
+                            <h1 class="mbr-blur-title mbr-fonts-style display-1">
+                                <strong>{{ post.title }}</strong></h1>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-</section>
-<section data-bs-version="5.1" class="content7 cid-tt95ql8vb7" id="content7-9">
+        </section>
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-12 col-md-12">
-            <blockquote>
-            <h5 class="mbr-section-title mbr-fonts-style mb-2 display-7"><strong>{{ data.post.date }}</strong></h5>
-            <p class="mbr-text mbr-fonts-style display-4">{{ data.post.description }}</p></blockquote>
-        </div>
-    </div>
-</div>
-</section>
+        <section data-bs-version="5.1" class="content2 cid-txzs3I8pfr" id="content2-b">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12 col-lg-6">
+                        <div class="title-wrapper">
+                            <h2 class="mbr-section-title mbr-fonts-style display-5">
+                                <strong>{{ post.date }}</strong>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="text-wrapper">
+                            <p class="mbr-text mbr-fonts-style display-2">
+                                {{ post.description }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="blur-circle"></div>
+                </div>
+            </div>
+        </section>
 
 <section data-bs-version="5.1" class="social1 cid-tt95ELfDUn" id="share1-b">
 <div class="container">
@@ -107,7 +106,7 @@ useHead({
     {
       hid: "og:image",
       property: "og:image",
-      content: `https://site.com/${data.value.post.img}`,
+      content: `https://www.sebastianhilton.com/${data.value.post.img}`,
     },
   ],
 });
