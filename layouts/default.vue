@@ -10,7 +10,7 @@
         <v-col><v-btn title="" variant="plain" href="/about">About</v-btn></v-col>
         <v-col><v-btn title="" variant="plain" href="/skills">Skills</v-btn></v-col>
         <v-col><v-btn title="" variant="plain" href="/portfolio">Works</v-btn></v-col>
-        <v-col><v-btn title="" variant="plain" href="/blog">Blog</v-btn></v-col>
+        <v-col><v-btn title="" variant="plain" href="https://www.dev.to/bastianhilton">Blog</v-btn></v-col>
         <v-col>
           <v-btn :prepend-icon="theme === 'dark' ? 'fas fa-sun' : 'fas fa-moon'" @click="onClick"></v-btn>
         </v-col>
