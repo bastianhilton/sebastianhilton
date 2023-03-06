@@ -6,9 +6,12 @@ export default defineNuxtConfig({
   extends: ['@sidebase/core'],
 
   css: [
+    'assets/web/assets/mobirise-icons2/mobirise2.css',
     'assets/bootstrap/css/bootstrap.min.css',
     'assets/bootstrap/css/bootstrap-grid.min.css',
     'assets/bootstrap/css/bootstrap-reboot.min.css',
+    'assets/dropdown/css/style.css',
+    'assets/socicon/css/styles.css',
     'assets/theme/css/style.css',
     'assets/mobirise/css/mbr-additional.css',
     'assets/styles/styles.css',
