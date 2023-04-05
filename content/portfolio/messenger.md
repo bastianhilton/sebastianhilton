@@ -1,8 +1,8 @@
 ---
-title: Meeovi Messenger
+title: Collaborrate
 img: 'img/graphqlserver.jpeg'
 tags: Nuxt, Javascript, Graphql
-link: https://messenger.meeovi.com
+link: https://www.collaborrate.com
 ---
 
-A fast, powerful, and cross-platform instant messenger that integrates with various Meeovi services and websites.
+A collaboration platform that provides teams with project management, instant messenger, emailing support, and more.
