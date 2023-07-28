@@ -5,25 +5,25 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="title-wrapper">
-                            <h2 class="mbr-section-title mbr-fonts-style display-2">My Porfolio.
+                            <h2 class="mbr-section-title mbr-fonts-style display-2">My UX Designs.
                             </h2>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-3 col-md-4 col-sm-6 item features-image" v-for="work in portfolio.data" :key="work">
-                        <a class="item-link" :href="work.website">
+                    <div class="col-12 col-lg-3 col-md-4 col-sm-6 item features-image" v-for="design in design.data" :key="design">
+                        <a class="item-link" :href="design.website">
                             <div class="item-wrapper">
-                                <img :src="`${url}/assets/${work.image}`" :alt="work.name" />
+                                <img :src="`${url}/assets/${design.image}`" :alt="design.name" />
                                 <div class="item-sticker">
                                     <p class="mbr-text mbr-fonts-style display-4">
-                                        {{ work.technology }}
+                                        {{ design.technology }}
                                     </p>
                                 </div>
                                 <div class="item-text">
                                     <h3 class="mbr-card-title mbr-fonts-style display-5">
-                                        {{ work.name }}
+                                        {{ design.name }}
                                     </h3>
                                     <p class="mbr-card-text mbr-fonts-style display-4">
-                                        <a :href="work.website" style="color: white !important;">{{ work.website }}</a>
+                                        <a :href="design.website" style="color: white !important;">{{ design.website }}</a>
                                     </p>
                                 </div>
                             </div>
@@ -37,24 +37,24 @@
     </div>
 </template>
   
-<script>
-export default {
-  data(){
-      return {
-          url: 'http://meeovicms.com:8005'
-      }
+  <script>
+  export default {
+    data(){
+        return {
+            url: 'http://meeovicms.com:8005'
+        }
+    }
   }
-}
-</script>
+  </script>
   
   <script setup>
 const { $directus } = useNuxtApp()
 
-const { data: portfolio } = await useAsyncData('portfolio', () => {
-  return $directus.items('portfolio').readByQuery({})
+const { data: design } = await useAsyncData('design', () => {
+  return $directus.items('design').readByQuery({})
 })
 
       useHead({
-          title: 'My Portfolio',
+          title: 'My Designs',
       })
   </script>

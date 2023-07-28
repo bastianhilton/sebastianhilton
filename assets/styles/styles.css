@@ -31,6 +31,10 @@ body {
     color: black !important;
 }
 
+.features2 {
+    height: 100% !important;
+}
+
 /******************* Main Section CSS *********/
 
 #mainSection {
@@ -56,3 +60,4 @@ body {
     padding-left: 0px;
     padding-right: 0px;
 }
+

@@ -10,27 +10,28 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "nuxt": "3.0.0",
-    "nuxt-meilisearch": "^0.1.7"
+    "nuxt": "latest",
+    "nuxt-meilisearch": "latest"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.2.1",
-    "@fortawesome/free-solid-svg-icons": "^6.2.1",
-    "@fortawesome/vue-fontawesome": "^3.0.2",
+    "@directus/sdk": "^10.3.5",
+    "@fortawesome/fontawesome-svg-core": "latest",
+    "@fortawesome/free-solid-svg-icons": "latest",
+    "@fortawesome/vue-fontawesome": "latest",
     "@mdi/font": "^7.1.96",
-    "@nuxt/content": "^2.3.0",
+    "@nuxt/content": "latest",
     "@nuxt/types": "^2.15.8",
-    "@nuxtjs/apollo": "^5.0.0-alpha.5",
+    "@nuxtjs/apollo": "next",
     "@sidebase/core": "^0.1.4",
     "@sidebase/nuxt-auth": "^0.3.3",
-    "@tinymce/tinymce-vue": "^5.0.0",
+    "@tinymce/tinymce-vue": "latest",
     "@types/cookie": "^0.5.1",
     "@types/graphql": "^14.5.0",
     "@types/node": "^18.11.18",
     "@types/passport": "^1.0.11",
-    "graphql": "^15.8.0",
+    "graphql": "latest",
     "sass": "^1.57.1",
     "ts-node": "^10.9.1",
-    "vuetify": "^3.0.5"
+    "vuetify": "latest"
   }
 }

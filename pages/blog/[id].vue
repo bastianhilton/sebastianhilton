@@ -81,20 +81,19 @@
 </script>
 
 <script setup>
-const { path } = useRoute();
-const { data } = await useAsyncData(`content-${path}`, async () => {
+const { $directus } = useNuxtApp()
+const route = useRoute()
 
-  // fetch document where the document path matches with the cuurent route
-  let post = queryContent().where({ _path: path }).findOne();
+const { data: post } = await useAsyncData('post', () => {
+  return $directus.items('posts').readOne(route.params.slug, {
+    fields: ['*.*']
+  })
+})
 
-  // get the surround information,
-  // which is an array of documeents that come before and after the current document
-  let surround = queryContent().only(["_path", "title", "description"]).sort({ date: 1 }).findSurround(path);
-  return {
-    post: await post,
-    surround: await surround,
-  };
-});
+if (!post.value) throw createError({
+  statusCode: 404,
+  statusMessage: 'Post Not Found'
+})
 
 useHead({
   title: data.value.post.title,
