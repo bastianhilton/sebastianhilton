@@ -9,7 +9,7 @@
                             </h2>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-3 col-md-4 col-sm-6 item features-image" v-for="design in design.data" :key="design">
+                    <div class="col-12 col-lg-3 col-md-4 col-sm-6 item features-image" v-for="design in design" :key="design">
                         <a class="item-link" :href="design.website">
                             <div class="item-wrapper">
                                 <img :src="`${url}/assets/${design.image}`" :alt="design.name" />
@@ -48,11 +48,9 @@
   </script>
   
   <script setup>
-const { $directus } = useNuxtApp()
+const { getItems } = useDirectusItems()
 
-const { data: design } = await useAsyncData('design', () => {
-  return $directus.items('design').readByQuery({})
-})
+const design = await getItems({ collection: "design" });
 
       useHead({
           title: 'My Designs',

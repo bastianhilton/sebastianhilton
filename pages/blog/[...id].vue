@@ -7,7 +7,7 @@
                         <div class="blur-circle"></div>
                         <div class="blur-text">
                             <h1 class="mbr-blur-title mbr-fonts-style display-1">
-                                <strong>{{ post.title }}</strong></h1>
+                                <strong>{{ blog.name }}</strong></h1>
                         </div>
                     </div>
                 </div>
@@ -20,14 +20,14 @@
                     <div class="col-12 col-lg-6">
                         <div class="title-wrapper">
                             <h2 class="mbr-section-title mbr-fonts-style display-5">
-                                <strong>{{ post.date }}</strong>
+                                <strong>{{ blog.createdAt }}</strong>
                             </h2>
                         </div>
                     </div>
                     <div class="col-12 col-lg-6">
                         <div class="text-wrapper">
                             <p class="mbr-text mbr-fonts-style display-2">
-                                {{ post.description }}
+                                {{ blog.description }}
                             </p>
                         </div>
                     </div>
@@ -81,28 +81,20 @@
 </script>
 
 <script setup>
-const { $directus } = useNuxtApp()
-const route = useRoute()
+const { getItemById } = useDirectusItems();
+const route = useRoute();
 
-const { data: post } = await useAsyncData('post', () => {
-  return $directus.items('posts').readOne(route.params.slug, {
-    fields: ['*.*']
-  })
-})
-
-if (!post.value) throw createError({
-  statusCode: 404,
-  statusMessage: 'Post Not Found'
-})
+const blog = await getItemById({ collection: "blog", id: route.params.id });
+if (!blog) throwError("No article found, 404");
 
 useHead({
-  title: data.value.post.title,
+  title: blog.name,
   meta: [
-    { name: "description", content: data.value.post.description },
+    { name: "description", content: blog.description },
     {
       hid: "og:image",
       property: "og:image",
-      content: `https://www.sebastianhilton.com/${data.value.post.img}`,
+      content: `https://www.sebastianhilton.com/${blog.image}`,
     },
   ],
 });

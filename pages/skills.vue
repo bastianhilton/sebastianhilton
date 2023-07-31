@@ -13,7 +13,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="col-4 cards-wrapper" v-for="skill in skills.data" :key="skill">
+                    <div class="col-4 cards-wrapper" v-for="skill in skills" :key="skill">
                         <div class="row cards">
                             <div class="col-12 card">
                                 <div class="card-wrapper">
@@ -40,11 +40,10 @@
 </script>
 
 <script setup>
-const { $directus } = useNuxtApp()
+const { getItems } = useDirectusItems()
 
-const { data: skills } = await useAsyncData('skills', () => {
-  return $directus.items('skills').readByQuery({})
-})
+const skills = await getItems({ collection: "skills" });
+
     useHead({
         title: 'My Skills',
     })

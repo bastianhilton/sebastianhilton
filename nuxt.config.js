@@ -47,14 +47,33 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/apollo',
     '@nuxt/content',
+    'nuxt-directus',
   ],
 
   apollo: {
+    authType: "Bearer",
+    authHeader: "Authorization",
+    tokenStorage: "cookie",
     clients: {
       default: {
-        httpEndpoint: 'http://localhost:4000/graphql',
-      }
+        tokenName: "apollo-token",
+        httpEndpoint: process.env.DIRECTUS_GRAPHQL,
+        httpLinkOptions: {
+          headers: {
+            'Authorization': process.env.DIRECTUS_TOKEN
+          }
+        }/* */
+      },
     },
+  },
+
+  directus: {
+    url: process.env.DIRECTUS_URL,
+    auth: {
+      email: process.env.DIRECTUS_EMAIL,
+      password: process.env.DIRECTUS_PASSWORD,
+      token: process.env.DIRECTUS_TOKEN,
+    }
   },
 
   build: {

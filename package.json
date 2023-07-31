@@ -11,10 +11,11 @@
   },
   "devDependencies": {
     "nuxt": "latest",
+    "nuxt-directus": "^5.5.0",
     "nuxt-meilisearch": "latest"
   },
   "dependencies": {
-    "@directus/sdk": "^10.3.5",
+    "@directus/sdk": "^11.0.1",
     "@fortawesome/fontawesome-svg-core": "latest",
     "@fortawesome/free-solid-svg-icons": "latest",
     "@fortawesome/vue-fontawesome": "latest",

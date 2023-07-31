@@ -3,7 +3,7 @@
         <section data-bs-version="5.1" class="content7 cid-txzqCUPk3D mbr-fullscreen" id="content7-3">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="row row-wrapper" v-for="about in about.data" :key="about">
+                    <div class="row row-wrapper" v-for="about in about" :key="about">
                         <div class="col-12 col-lg-6 image-card">
                             <div class="image-wrapper">
                                 <img :src="`${url}/assets/${about.image}`" :alt="about.name" />
@@ -36,13 +36,11 @@ export default {
 </script>
 
 <script setup>
+const { getItems } = useDirectusItems()
+
+const about = await getItems({ collection: "about" });
+
     useHead({
         title: 'About Me',
     })
-
-const { $directus } = useNuxtApp()
-
-const { data: about } = await useAsyncData('about', () => {
-  return $directus.items('about').readByQuery({})
-})
 </script>
