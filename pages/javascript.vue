@@ -5,25 +5,25 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="title-wrapper">
-                            <h2 class="mbr-section-title mbr-fonts-style display-2">My UX Designs.
+                            <h2 class="mbr-section-title mbr-fonts-style display-2">My Javascript Projects.
                             </h2>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-3 col-md-4 col-sm-6 item features-image" v-for="design in design" :key="design">
-                        <a class="item-link" :href="design.website">
+                    <div class="col-12 col-lg-3 col-md-4 col-sm-6 item features-image" v-for="javascript in data.JavascriptItems.items" :key="javascript">
+                        <a class="item-link" :href="javascript.content.url.url">
                             <div class="item-wrapper">
-                                <img :src="`${url}/assets/${design.image}`" :alt="design.name" />
+                                <img :src="`${javascript.content.image.url}`" :alt="javascript.content.name" />
                                 <div class="item-sticker">
                                     <p class="mbr-text mbr-fonts-style display-4">
-                                        {{ design.technology }}
+                                        {{ javascript.content.version }}
                                     </p>
                                 </div>
                                 <div class="item-text">
                                     <h3 class="mbr-card-title mbr-fonts-style display-5">
-                                        {{ design.name }}
+                                        {{ javascript.description }}
                                     </h3>
                                     <p class="mbr-card-text mbr-fonts-style display-4">
-                                        <a :href="design.website" style="color: white !important;">{{ design.website }}</a>
+                                        <a :href="javascript.content.url.url" style="color: white !important;">{{ javascript.content.url.url }}</a>
                                     </p>
                                 </div>
                             </div>
@@ -48,11 +48,32 @@
   </script>
   
   <script setup>
-const { getItems } = useDirectusItems()
+  const query = gql`
+    query {
+  JavascriptItems {
+    items {
+      content {
+        name
+        version
+        description
+        url {
+          url
+        }
+        image {
+          filename
+        }
+      }
+    }
+  }
+}
+`
 
-const design = await getItems({ collection: "design" });
+const { data } = await useAsyncQuery(query)
+/*const { getItems } = useDirectusItems()
+
+const design = await getItems({ collection: "design" });*/
 
       useHead({
-          title: 'My Designs',
+          title: 'Javascript',
       })
   </script>

@@ -9,22 +9,20 @@
                             </h2>
                         </div>
                     </div>
-                    <div class="col-12 col-lg-3 col-md-4 col-sm-6 item features-image" v-for="work in portfolio" :key="work">
-                        <a class="item-link" :href="work.website">
+                    <div class="col-12 col-lg-3 col-md-4 col-sm-6 item features-image" v-for="work in data.PortfolioItems.items" :key="work">
+                        <a class="item-link" :href="work.content.website.url">
                             <div class="item-wrapper">
-                                <img :src="`${url}/assets/${work.image}`" :alt="work.name" />
+                                <img :src="`${work.content.image.filename}`" :alt="work.name" />
                                 <div class="item-sticker">
                                     <p class="mbr-text mbr-fonts-style display-4">
-                                        {{ work.technology }}
+                                        {{ work.content.technology }}
                                     </p>
                                 </div>
                                 <div class="item-text">
                                     <h3 class="mbr-card-title mbr-fonts-style display-5">
                                         {{ work.name }}
                                     </h3>
-                                    <p class="mbr-card-text mbr-fonts-style display-4">
-                                        <a :href="work.website" style="color: white !important;">{{ work.website }}</a>
-                                    </p>
+                                    <p class="mbr-card-text mbr-fonts-style display-4" v-html="work.content.description"></p>
                                 </div>
                             </div>
                         </a>
@@ -41,16 +39,36 @@
 export default {
   data(){
       return {
-          url: 'http://meeovicms.com:8005'
       }
   }
 }
 </script>
   
   <script setup>
-const { getItems } = useDirectusItems()
+  const query = gql`
+  query {
+  PortfolioItems {
+    items {
+      name
+      content {
+        description
+        technology
+        website {
+          url
+        }
+        image {
+          filename
+        }
+      }
+    }
+  }
+}
+`
 
-const portfolio = await getItems({ collection: "portfolio" });
+const { data } = await useAsyncQuery(query)
+/*const { getItems } = useDirectusItems()
+
+const portfolio = await getItems({ collection: "portfolio" }); */
 
       useHead({
           title: 'My Portfolio',

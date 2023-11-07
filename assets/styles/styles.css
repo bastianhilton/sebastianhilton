@@ -51,6 +51,10 @@ body {
     height: 100% !important;
 }
 
+.header2 {
+    height: 100%;
+}
+
 .dialog-bottom-transition-enter-active,
 .dialog-bottom-transition-leave-active {
     transition: transform .2s ease-in-out;

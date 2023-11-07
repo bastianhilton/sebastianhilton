@@ -48,6 +48,7 @@ export default defineNuxtConfig({
     '@nuxtjs/apollo',
     '@nuxt/content',
     'nuxt-directus',
+    ["@storyblok/nuxt", { accessToken: process.env.accessToken }]
   ],
 
   apollo: {
@@ -57,10 +58,12 @@ export default defineNuxtConfig({
     clients: {
       default: {
         tokenName: "apollo-token",
-        httpEndpoint: process.env.DIRECTUS_GRAPHQL,
+        httpEndpoint: process.env.STORYBLOK_URL,
         httpLinkOptions: {
           headers: {
-            'Authorization': process.env.DIRECTUS_TOKEN
+            //'Authorization': process.env.STORYBLOK_TOKEN,
+            token: process.env.STORYBLOK_TOKEN,
+            version: 'publish'
           }
         }/* */
       },
