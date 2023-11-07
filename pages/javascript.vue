@@ -12,7 +12,7 @@
                     <div class="col-12 col-lg-3 col-md-4 col-sm-6 item features-image" v-for="javascript in data.JavascriptItems.items" :key="javascript">
                         <a class="item-link" :href="javascript.content.url.url">
                             <div class="item-wrapper">
-                                <img :src="`${javascript.content.image.url}`" :alt="javascript.content.name" />
+                                <img :src="`${javascript.content.image.filename}`" :alt="javascript.content.name" />
                                 <div class="item-sticker">
                                     <p class="mbr-text mbr-fonts-style display-4">
                                         {{ javascript.content.version }}
