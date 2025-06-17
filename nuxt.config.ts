@@ -27,7 +27,7 @@ export default defineNuxtConfig({
           href: '/icons/apple-touch-icon-180x180.png'
         },
       ],
-      /*script: [
+      script: [
         {
         src: 'assets/bootstrap/js/bootstrap.bundle.min.js'
         },
@@ -43,7 +43,7 @@ export default defineNuxtConfig({
         {
         src: 'assets/theme/js/script.js'
         },
-    ]*/
+    ]
     },
   },
 
@@ -64,7 +64,7 @@ export default defineNuxtConfig({
       // Directus
       directus: {
         url: process.env.DIRECTUS_URL,
-        nuxtBaseUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3013',
+        //nuxtBaseUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3013',
         auth: {
           email: process.env.NUXTUS_DIRECTUS_ADMIN_EMAIL,
           password: process.env.NUXTUS_DIRECTUS_ADMIN_PASSWORD,
