@@ -12,19 +12,19 @@
                             <div class="row al">
                                 <div class="col-auto">
                                     <div class="wrap-img">
-                                        <img :src="`${$directus.url}/assets/${article?.image?.filename_disk}`"
-                                            :alt="article?.name" class="inner">
+                                        <img :src="`${$directus.url}/assets/${post?.image?.filename_disk}`"
+                                            :alt="post?.name" class="inner">
                                     </div>
                                 </div>
                                 <div class="col-12 col-sm right">
                                     <div class="top">
                                         <div class="align">
-                                            <h4 class="button-color mbr-fonts-style display-4">{{ article?.tags }}</h4>
+                                            <h4 class="button-color mbr-fonts-style display-4">{{ post?.tags }}</h4>
                                         </div>
                                         <h5 class="card-title mbr-fonts-style display-2">
-                                            <strong>{{ article?.name }}</strong>
+                                            <strong>{{ post?.name }}</strong>
                                         </h5>
-                                        <h5 class="card-text mbr-fonts-style display-4" v-html="article?.excerpt"></h5>
+                                        <h5 class="card-text mbr-fonts-style display-4" v-html="post?.excerpt"></h5>
                                     </div>
                                     <div class="bottom">
                                         <div>
@@ -63,8 +63,8 @@
                         <div class="row">
                             <div class="col-12">
                                 <h4 class="heading mbr-fonts-style mbr-section-title display-2">
-                                    <strong>{{ article?.name }}</strong></h4>
-                                <p class="mbr-text mbr-fonts-style p p1 display-4" v-html="article?.description"></p>
+                                    <strong>{{ post?.name }}</strong></h4>
+                                <p class="mbr-text mbr-fonts-style p p1 display-4" v-html="post?.description"></p>
                             </div>
                         </div>
                     </div>
@@ -83,12 +83,12 @@
                         <h3 class="t1 mbr-fonts-style display-2">
                             <strong>Licenses</strong>
                         </h3>
-                        <h3 class="mbr-section-subtitle mbr-fonts-style display-4" v-html="article?.license"></h3>
-                        <h3 class="mbr-section-title mbr-fonts-style display-5" v-if="article?.source">
+                        <h3 class="mbr-section-subtitle mbr-fonts-style display-4" v-html="post?.license"></h3>
+                        <h3 class="mbr-section-title mbr-fonts-style display-5" v-if="post?.source">
                             <strong>Sources</strong></h3>
                         <h3 class="mbr-section-subtitle mbr-fonts-style display-4">
-                            <NuxtLink :href="article?.source?.[0]?.url" class="text-black">
-                                {{ article?.source?.[0]?.name }}</NuxtLink>,&nbsp;
+                            <NuxtLink :href="post?.source?.[0]?.url" class="text-black">
+                                {{ post?.source?.[0]?.name }}</NuxtLink>,&nbsp;
                         </h3>
 
                     </div>
@@ -113,8 +113,8 @@
     } = useNuxtApp()
 
     const {
-        data: article
-    } = await useAsyncData('article', () => {
+        data: post
+    } = await useAsyncData('post', () => {
         return $directus.request($readItem('article', {
             filter: {
                 slug: {
@@ -127,6 +127,6 @@
     })
 
     useHead({
-        title: computed(() => article?.value?.name || 'Article Page')
+        title: computed(() => post?.value?.name || 'Article Page')
     })
 </script>

@@ -13,20 +13,20 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-12 col-md-6 col-lg-4 item features-image" v-for="skills in skills" :key="skills.id">
+                    <div class="col-12 col-md-6 col-lg-4 item features-image" v-for="skillItem in skills" :key="skillItem.id">
                         <div class="shadow item-wrapper">
                             <div class="wrap-img item-img">
-                                <img :src="`${$directus.url}/assets/${skills?.image?.filename_disk}`" :alt="skills?.name" class="inner">
+                                <img :src="`${$directus.url}/assets/${skillItem?.image?.filename_disk}`" :alt="skillItem?.name" class="inner">
                             </div>
                             <div class="card-wrapper">
-                                <h5 class="card-title mbr-fonts-style display-5"><strong>{{ skills?.name }}</strong></h5>
-                                <h5 class="card-text mbr-fonts-style display-4" v-html="skills?.description"></h5>
+                                <h5 class="card-title mbr-fonts-style display-5"><strong>{{ skillItem?.name }}</strong></h5>
+                                <h5 class="card-text mbr-fonts-style display-4" v-html="skillItem?.description"></h5>
                                 <div class="row link-row justify-content-between">
                                     <div class="col-auto">
 
                                     </div>
                                     <div class="col-auto">
-                                        <h5 class="number mbr-fonts-style display-4"><strong>{{ skills?.efficiency }}</strong></h5>
+                                        <h5 class="number mbr-fonts-style display-4"><strong>{{ skillItem?.efficiency }}</strong></h5>
                                     </div>
                                 </div>
                             </div>

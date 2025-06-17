@@ -25,8 +25,10 @@
                         </div>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true" v-for="header in header?.menus" :key="header?.id">
-                            <li class="nav-item"><NuxtLink class="nav-link link text-black display-4" :href="header?.url" aria-expanded="false">{{ header?.name }}</NuxtLink></li>
+                        <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+                            <li class="nav-item" v-for="menuItem in header?.menus" :key="menuItem?.id">
+                                <NuxtLink class="nav-link link text-black display-4" :href="menuItem?.url" aria-expanded="false">{{ menuItem?.name }}</NuxtLink>
+                            </li>
                         </ul>
                         <!--<div class="icons-menu">
                             <div class="mbr-section-btn"><NuxtLink class="btn btn-secondary display-4" href="">Last Video</NuxtLink>
