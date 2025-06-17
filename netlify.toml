@@ -1,0 +1,11 @@
+[build]
+  command = "npm run generate"
+  publish = ".output/public"
+
+[build.environment]
+  DIRECTUS_URL = "https://portfolio.meeovicms.com"
+  
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
