@@ -25,7 +25,7 @@
                                     <div class="col-auto">
                                         <h5 class="link-title mbr-fonts-style display-4"><span
                                                 class="mobi-mbri mobi-mbri-play mbr-iconfont mbr-iconfont-btn"></span>
-                                            <NuxtLink href="index.html" class="text-black"><strong>Read More</strong></NuxtLink>
+                                            <NuxtLink :href="articles?.slug" class="text-black"><strong>Read More</strong></NuxtLink>
                                         </h5>
                                     </div>
                                     <div class="col-auto">
@@ -51,7 +51,7 @@
     const {
         data: articles
     } = await useAsyncData('articles', () => {
-        return $directus.request($readItems('articles', {
+        return $directus.request($readItems('article', {
             fields: ['*', {
                 '*': ['*']
             }],

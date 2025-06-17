@@ -27,7 +27,7 @@ export default defineNuxtConfig({
           href: '/icons/apple-touch-icon-180x180.png'
         },
       ],
-      script: [
+      /*script: [
         {
         src: 'assets/bootstrap/js/bootstrap.bundle.min.js'
         },
@@ -43,7 +43,7 @@ export default defineNuxtConfig({
         {
         src: 'assets/theme/js/script.js'
         },
-    ]
+    ]*/
     },
   },
 
